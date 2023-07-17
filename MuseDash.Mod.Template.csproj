@@ -8,6 +8,10 @@
         <Authors>lxy</Authors>
         <Description>Template for MuseDash Mod</Description>
         <PackageTags>dotnet-new;templates;MuseDash</PackageTags>
+        <RepositoryUrl>https://github.com/lxymahatma/MuseDash.Mod.Template</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+
         <TargetFramework>net48</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -22,6 +26,7 @@
 
     <ItemGroup>
         <None Include="icon.png" Pack="true" PackagePath="\"/>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
         <Content Include="MuseDashModTemplate\**\*" Exclude="MuseDashModTemplate\**\bin\**;MuseDashModTemplate\**\obj\**;MuseDashModTemplate\**\.idea\**"/>
         <Compile Remove="**\*"/>
     </ItemGroup>
