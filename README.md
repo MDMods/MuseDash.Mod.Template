@@ -1,0 +1,1 @@
+# MuseDash.Mod.Template
