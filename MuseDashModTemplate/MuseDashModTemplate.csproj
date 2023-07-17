@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <RootNamespace>MuseDashModTemplate</RootNamespace>
+        <AssemblyName>MuseDashModTemplate</AssemblyName>
+        <TargetFramework>net48</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ReferencePath>steamapps/common/Muse Dash</ReferencePath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Framework) == 'net6.0'">
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Framework) != 'net6.0'">
+        <FileAlignment>512</FileAlignment>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <PlatformTarget>x86</PlatformTarget>
+        <WarningLevel>4</WarningLevel>
+
+        <DebugSymbols Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">true</DebugSymbols>
+        <DebugType Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">full</DebugType>
+        <Optimize Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">false</Optimize>
+        <OutputPath Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">bin\Debug\</OutputPath>
+        <DefineConstants Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">DEBUG;TRACE</DefineConstants>
+        <ErrorReport Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">prompt</ErrorReport>
+
+        <DebugType Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">pdbonly</DebugType>
+        <Optimize Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">true</Optimize>
+        <OutputPath Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">bin\Release\</OutputPath>
+        <DefineConstants Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">TRACE</DefineConstants>
+        <ErrorReport Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">prompt</ErrorReport>
+    </PropertyGroup>
+
+    <ItemDefinitionGroup>
+        <PackageReference PrivateAssets="all" ExcludeAssets="runtime"/>
+        <Reference Private="false"/>
+    </ItemDefinitionGroup>
+
+    <!--MelonLoader 0.6.1-->
+    <ItemGroup Condition="$(Framework) == 'net6.0'">
+        <PackageReference Include="LavaGang.MelonLoader" Version="0.6.1"/>
+        <Reference Include="0Harmony">
+            <HintPath>$(ReferencePath)\MelonLoader\net6\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Il2CppInterop.Runtime">
+            <HintPath>$(ReferencePath)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Il2Cppmscorlib">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="Il2CppSirenix.Serialization">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Il2CppSirenix.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="Tomlet">
+            <HintPath>$(ReferencePath)\MelonLoader\net6\Tomlet.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <!--MelonLoader 0.5.7-->
+    <ItemGroup Condition="$(Framework) != 'net6.0'">
+        <Reference Include="0Harmony">
+            <HintPath>$(ReferencePath)\MelonLoader\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Il2Cppmscorlib">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="MelonLoader">
+            <HintPath>$(ReferencePath)\MelonLoader\MelonLoader.dll</HintPath>
+        </Reference>
+        <Reference Include="Sirenix.Serialization">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\Sirenix.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="Tomlet">
+            <HintPath>$(ReferencePath)\MelonLoader\Tomlet.dll</HintPath>
+        </Reference>
+        <Reference Include="UnhollowerBaseLib">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Condition="'$(Framework)' != 'net6.0'" Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+
+</Project>
