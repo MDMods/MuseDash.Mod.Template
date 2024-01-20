@@ -2,7 +2,7 @@ using MelonLoader;
 
 namespace MuseDashModTemplate;
 
-public class Main : MelonMod
+internal class Main : MelonMod
 {
     // The method called when mod is loaded
     public override void OnInitializeMelon()

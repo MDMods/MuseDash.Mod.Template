@@ -8,7 +8,7 @@
   ],
   "identity": "MuseDash.Mod.CSharp.Windows",
   "name": "MuseDash Mod",
-  "shortName": "muse dash-mod",
+  "shortName": "musedashmod",
   "tags": {
     "language": "C#",
     "type": "project",
@@ -17,31 +17,6 @@
   "sourceName": "MuseDashModTemplate",
   "preferNameDirectory": true,
   "symbols": {
-    "Framework": {
-      "type": "parameter",
-      "description": "The target .Net Framework for the project.",
-      "datatype": "choice",
-      "displayName": "Framework version",
-      "choices": [
-        {
-          "choice": "net472",
-          "displayName": "Target .Net Framework 4.7.2",
-          "description": ".Net Framework 4.7.2"
-        },
-        {
-          "choice": "net48",
-          "displayName": "Target .Net Framework 4.8",
-          "description": ".Net Framework 4.8"
-        },
-        {
-          "choice": "net6.0",
-          "description": "Target net6.0",
-          "displayName": ".NET 6.0"
-        }
-      ],
-      "replaces": "net48",
-      "defaultValue": "net48"
-    },
     "Muse Dash Path": {
       "type": "parameter",
       "description": "Normally ends with steamapps\\common\\Muse Dash",
@@ -65,6 +40,9 @@
       "path": "Setting.cs"
     },
     {
+      "path": "AssemblyInfo.cs"
+    },
+    {
       "path": ".gitignore"
     }
   ],
@@ -75,14 +53,6 @@
         ".template.config/**/*",
         "bin/**/*",
         "obj/**/*"
-      ],
-      "modifiers": [
-        {
-          "condition": "(Framework) == 'net6.0'",
-          "exclude": [
-            "Properties/**/*"
-          ]
-        }
       ]
     }
   ]
