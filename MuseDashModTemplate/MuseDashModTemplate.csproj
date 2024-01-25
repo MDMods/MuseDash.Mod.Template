@@ -49,4 +49,9 @@
         </Reference>
     </ItemGroup>
 
+    <Target Name="CopyMods" AfterTargets="Build">
+        <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="$(ReferencePath)\Mods"/>
+        <Message Text="Copied DLL -&gt; $(ReferencePath)\Mods\$(ProjectName).dll" Importance="High"/>
+    </Target>
+
 </Project>
