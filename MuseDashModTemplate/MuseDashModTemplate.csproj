@@ -23,6 +23,9 @@
         <Reference Include="Assembly-CSharp">
             <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
         </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
         <Reference Include="Il2CppInterop.Runtime">
             <HintPath>$(ReferencePath)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
         </Reference>
@@ -38,14 +41,26 @@
         <Reference Include="Tomlet">
             <HintPath>$(ReferencePath)\MelonLoader\net6\Tomlet.dll</HintPath>
         </Reference>
+        <Reference Include="Unity.Addressables">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ResourceManager">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.InputLegacyModule">
             <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.UI">
             <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+            <HintPath>$(ReferencePath)\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath>
         </Reference>
     </ItemGroup>
 

@@ -1,5 +1,3 @@
-using HarmonyLib;
-
 namespace MuseDashModTemplate;
 
 [HarmonyPatch(typeof(), nameof())]

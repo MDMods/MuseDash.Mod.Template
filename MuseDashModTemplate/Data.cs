@@ -1,17 +1,4 @@
-using Tomlet.Attributes;
-
 namespace MuseDashModTemplate;
-
-internal static class Setting
-{
-    internal static void Load()
-    {
-    }
-
-    internal static void Save()
-    {
-    }
-}
 
 public class Data
 {
