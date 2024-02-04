@@ -1,3 +1,5 @@
+using Tomlet.Attributes;
+
 namespace MuseDashModTemplate;
 
 public class Data

@@ -1,17 +1,17 @@
-using Tomlet.Attributes;
+using Tomlet;
 
 namespace MuseDashModTemplate;
 
 internal static class SettingManager
 {
-    private static readonly string ConfigPath => Path.Combine("UserData", $"{Name}.cfg");
+    private static readonly string ConfigPath = Path.Combine("UserData", $"{Name}.cfg");
     internal static Data Setting { get; set; } = new();
     internal static void Load()
     {
         if (!File.Exists(ConfigPath))
         {
             var defaultConfig = TomletMain.TomlStringFrom(Setting);
-            File.WriteAllText(ConfigPath), defaultConfig);
+            File.WriteAllText(ConfigPath, defaultConfig);
         }
 
         var setting = File.ReadAllText(ConfigPath);
@@ -20,6 +20,6 @@ internal static class SettingManager
 
     internal static void Save()
     {
-        File.WriteAllText(ConfigPath), TomletMain.TomlStringFrom(Setting));
+        File.WriteAllText(ConfigPath, TomletMain.TomlStringFrom(Setting));
     }
 }
