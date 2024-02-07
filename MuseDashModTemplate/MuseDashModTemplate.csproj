@@ -8,6 +8,7 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <ReferencePath>steamapps/common/Muse Dash</ReferencePath>
     </PropertyGroup>
 
