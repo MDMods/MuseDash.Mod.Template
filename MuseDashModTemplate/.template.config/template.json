@@ -17,35 +17,19 @@
   "sourceName": "MuseDashModTemplate",
   "preferNameDirectory": true,
   "symbols": {
-    "Muse Dash Path": {
+    "Setting": {
       "type": "parameter",
-      "description": "Normally ends with steamapps\\common\\Muse Dash",
-      "displayName": "Muse Dash Folder Path",
-      "datatype": "text",
-      "replaces": "steamapps/common/Muse Dash",
-      "defaultValue": ""
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to generate a setting manager class for the mod"
+    },
+    "Patching": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Whether to generate a patching class for the mod"
     }
   },
-  "primaryOutputs": [
-    {
-      "path": "MuseDashModTemplate.csproj"
-    },
-    {
-      "path": "Main.cs"
-    },
-    {
-      "path": "MelonBuildInfo.cs"
-    },
-    {
-      "path": "Setting.cs"
-    },
-    {
-      "path": "AssemblyInfo.cs"
-    },
-    {
-      "path": ".gitignore"
-    }
-  ],
   "sources": [
     {
       "exclude": [
@@ -53,6 +37,21 @@
         ".template.config/**/*",
         "bin/**/*",
         "obj/**/*"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!Setting)",
+          "exclude": [
+            "Data.cs",
+            "SettingManager.cs"
+          ]
+        },
+        {
+          "condition": "(!Patching)",
+          "exclude": [
+            "Patches/**/*"
+          ]
+        }
       ]
     }
   ]

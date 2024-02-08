@@ -6,12 +6,16 @@ internal class Main : MelonMod
     public override void OnInitializeMelon()
     {
         LoggerInstance.Msg($"{Name} is loaded!");
+#if Setting
         SettingManager.Load();
+#endif
     }
 
     // The method called when mod is unloaded
     public override void OnDeinitializeMelon()
     {
+#if Setting
         SettingManager.Save();
+#endif
     }
 }
