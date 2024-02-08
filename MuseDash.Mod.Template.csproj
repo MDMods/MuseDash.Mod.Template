@@ -28,6 +28,7 @@
         <Compile Include="MuseDashModTemplate\AssemblyInfo.cs"/>
         <Compile Include="MuseDashModTemplate\Data.cs"/>
         <Compile Include="MuseDashModTemplate\GlobalUsings.cs"/>
+        <Compile Include="MuseDashModTemplate\Patches.cs"/>
         <None Include="icon.png" Pack="true" PackagePath="\"/>
         <None Include="README.md" Pack="true" PackagePath="\"/>
         <Content Include="MuseDashModTemplate\**\*" Exclude="MuseDashModTemplate\**\bin\**;MuseDashModTemplate\**\obj\**;MuseDashModTemplate\**\.idea\**"/>

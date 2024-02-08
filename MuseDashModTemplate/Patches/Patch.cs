@@ -1,4 +1,4 @@
-namespace MuseDashModTemplate;
+namespace MuseDashModTemplate.Patches;
 
 [HarmonyPatch(typeof(), nameof())]
 internal static class Patch
