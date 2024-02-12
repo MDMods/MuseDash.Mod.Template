@@ -102,6 +102,9 @@
         <Reference Include="UnityEngine.UI">
             <HintPath>$(MelonAssemblies)\UnityEngine.UI.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.UIModule">
+            <HintPath>$(MelonAssemblies)\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
         <Reference Include="Il2CppDOTween">
             <HintPath>$(MelonAssemblies)\Il2CppDOTween.dll</HintPath>
         </Reference>
