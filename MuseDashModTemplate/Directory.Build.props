@@ -11,7 +11,7 @@
     </PropertyGroup>
 
     <ItemDefinitionGroup>
-        <PackageReference PrivateAssets="all" ExcludeAssets="runtime"/>
+        <PackageReference PrivateAssets="all"/>
         <Reference Private="false"/>
     </ItemDefinitionGroup>
 
