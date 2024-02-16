@@ -19,9 +19,36 @@
   "symbols": {
     "Setting": {
       "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Whether to generate a setting manager class for the mod"
+      "datatype": "choice",
+      "allowMultipleValues": false,
+      "description": "Options for generating a setting class for the mod",
+      "choices": [
+        {
+          "choice": "MelonLoader",
+          "description": "Use MelonPrefernces for setting"
+        },
+        {
+          "choice": "Tomlet",
+          "description": "Use Tomlet directly for setting"
+        },
+        {
+          "choice": "None",
+          "description": "Do not generate a setting class for the mod"
+        }
+      ],
+      "defaultValue": "None"
+    },
+    "MelonSetting": {
+      "type": "computed",
+      "value": "(Setting == \"MelonLoader\")"
+    },
+    "TomletSetting": {
+      "type": "computed",
+      "value": "(Setting == \"Tomlet\")"
+    },
+    "NoSetting": {
+      "type": "computed",
+      "value": "(Setting == \"None\")"
     },
     "Patching": {
       "type": "parameter",
@@ -40,8 +67,14 @@
       ],
       "modifiers": [
         {
-          "condition": "(!Setting)",
-          "exclude": [
+          "condition": "(MelonSetting)",
+          "include": [
+            "SettingManager.cs"
+          ]
+        },
+        {
+          "condition": "(TomletSetting)",
+          "include": [
             "Data.cs",
             "SettingManager.cs"
           ]

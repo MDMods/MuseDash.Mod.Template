@@ -1,6 +1,6 @@
 namespace MuseDashModTemplate.Patches;
 
-[HarmonyPatch(typeof(), nameof())]
+[HarmonyPatch(typeof(Patch), nameof(Postfix))]
 internal static class Patch
 {
     private static void Prefix()
