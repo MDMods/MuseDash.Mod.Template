@@ -5,8 +5,11 @@ internal class Main : MelonMod
     // The method called when mod is loaded
     public override void OnInitializeMelon()
     {
+#if MelonSetting
+        SettingManager.Register();
+#endif
+#if TomletSetting
         LoggerInstance.Msg($"{Name} is loaded!");
-#if Setting
         SettingManager.Load();
 #endif
     }
@@ -14,7 +17,7 @@ internal class Main : MelonMod
     // The method called when mod is unloaded
     public override void OnDeinitializeMelon()
     {
-#if Setting
+#if TomletSetting
         SettingManager.Save();
 #endif
     }

@@ -68,6 +68,9 @@
       "modifiers": [
         {
           "condition": "(MelonSetting)",
+          "exclude": [
+            "Data.cs"
+          ],
           "include": [
             "SettingManager.cs"
           ]
@@ -75,6 +78,13 @@
         {
           "condition": "(TomletSetting)",
           "include": [
+            "Data.cs",
+            "SettingManager.cs"
+          ]
+        },
+        {
+          "condition": "(NoSetting)",
+          "exclude": [
             "Data.cs",
             "SettingManager.cs"
           ]

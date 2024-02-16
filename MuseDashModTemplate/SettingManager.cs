@@ -1,11 +1,9 @@
 #if TomletSetting
 using Tomlet;
 #endif
-
 #if MelonSetting
 using MelonLoader;
 #endif
-
 
 namespace MuseDashModTemplate;
 
@@ -38,9 +36,8 @@ internal static class SettingManager
     private static MelonPreferences_Entry<int> _exampleInt;
     private static MelonPreferences_Entry<string> _exampleString;
     public static bool ExampleBool => _exampleBool.Value;
-    public static bool ExampleInt => _exampleInt.Value;
+    public static int ExampleInt => _exampleInt.Value;
     public static string ExampleString => _exampleString.Value;
-
 
     internal static void Register()
     {
