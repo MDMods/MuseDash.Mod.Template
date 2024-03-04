@@ -17,10 +17,17 @@
   "sourceName": "MuseDashModTemplate",
   "preferNameDirectory": true,
   "symbols": {
+    "Patching": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Whether to generate a patching class for the mod"
+    },
     "Setting": {
       "type": "parameter",
       "datatype": "choice",
       "allowMultipleValues": false,
+      "enableQuotelessLiterals": true,
       "description": "Options for generating a setting class for the mod",
       "choices": [
         {
@@ -50,23 +57,39 @@
       "type": "computed",
       "value": "(Setting == None)"
     },
-    "Patching": {
+    "UsefulLibs": {
       "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "true",
-      "description": "Whether to generate a patching class for the mod"
+      "datatype": "choice",
+      "allowMultipleValues": true,
+      "enableQuotelessLiterals": true,
+      "description": "Options for including useful libraries for the mod",
+      "choices": [
+        {
+          "choice": "MuseDashMirror",
+          "description": "Use Muse Dash Mirror package for the mod"
+        },
+        {
+          "choice": "ILRepack",
+          "description": "Use IlRepack to merge the dependencies"
+        },
+        {
+          "choice": "UniTask",
+          "description": "Use UniTask for async operations"
+        }
+      ],
+      "defaultValue": "MuseDashMirror"
     },
-    "MuseDashMirror": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Whether to use Muse Dash Mirror package for the mod"
+    "UseMuseDashMirror": {
+      "type": "computed",
+      "value": "(UsefulLibs == MuseDashMirror)"
     },
-    "ILRepack": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Whether to use IlRepack to merge the dependencies"
+    "UseILRepack": {
+      "type": "computed",
+      "value": "(UsefulLibs == ILRepack)"
+    },
+    "UseUniTask": {
+      "type": "computed",
+      "value": "(UsefulLibs == UniTask)"
     }
   },
   "sources": [
@@ -105,6 +128,12 @@
           "condition": "(!Patching)",
           "exclude": [
             "Patches/**/*"
+          ]
+        },
+        {
+          "condition": "(!ILRepack)",
+          "exclude": [
+            "ILRepack.targets"
           ]
         }
       ]

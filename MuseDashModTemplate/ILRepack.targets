@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- ILRepack -->
+    <Target Name="ILRepacker" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+        <PropertyGroup>
+            <WorkingDirectory>$(OutputPath)</WorkingDirectory>
+        </PropertyGroup>
+        <ItemGroup>
+            <InputAssemblies Include="$(OutputPath)\$(AssemblyName).dll"/>
+            <IlRepackLibs Include="$(OutputPath)"/>
+            <IlRepackLibs Include="$(MelonNET6)"/>
+        </ItemGroup>
+        <ILRepack
+                Internalize="true"
+                LibraryPath="@(IlRepackLibs)"
+                OutputFile="$(OutputPath)\$(AssemblyName).dll"
+                InputAssemblies="@(InputAssemblies)"
+                TargetKind="Dll"
+                Parallel="true"/>
+    </Target>
+    <!-- /ILRepack -->
+</Project>

@@ -1,9 +1,6 @@
 #if TomletSetting
 using Tomlet;
 #endif
-#if MelonSetting
-using MelonLoader;
-#endif
 
 namespace MuseDashModTemplate;
 
@@ -40,7 +37,7 @@ internal static class SettingManager
 
     internal static void Register()
     {
-        var category = MelonPreferences.CreateCategory($"{Name}", $"{Name}");
+        var category = MelonPreferences.CreateCategory(Name, Name);
 
         _exampleBool = category.CreateEntry("ExampleBool", false, "Example Bool");
         _exampleInt = category.CreateEntry("ExampleInt", 1, "Example Int");
