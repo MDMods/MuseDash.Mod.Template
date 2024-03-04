@@ -2,8 +2,12 @@ using Tomlet.Attributes;
 
 namespace MuseDashModTemplate;
 
+/// <summary>
+///     Data class for the Mod
+/// </summary>
 public class Data
 {
+    // TomlPrecedingComment is used to add a comment to the top of the field when the file is saved
     [TomlPrecedingComment("Example Bool")]
     internal readonly bool ExampleBool;
 

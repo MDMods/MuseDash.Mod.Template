@@ -40,21 +40,33 @@
     },
     "MelonSetting": {
       "type": "computed",
-      "value": "(Setting == \"MelonLoader\")"
+      "value": "(Setting == MelonLoader)"
     },
     "TomletSetting": {
       "type": "computed",
-      "value": "(Setting == \"Tomlet\")"
+      "value": "(Setting == Tomlet)"
     },
     "NoSetting": {
       "type": "computed",
-      "value": "(Setting == \"None\")"
+      "value": "(Setting == None)"
     },
     "Patching": {
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "true",
       "description": "Whether to generate a patching class for the mod"
+    },
+    "MuseDashMirror": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to use Muse Dash Mirror package for the mod"
+    },
+    "ILRepack": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to use IlRepack to merge the dependencies"
     }
   },
   "sources": [

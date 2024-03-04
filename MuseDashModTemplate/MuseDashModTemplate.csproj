@@ -6,11 +6,11 @@
         <AssemblyName>MuseDashModTemplate</AssemblyName>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>disable</Nullable>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 
     <ItemGroup>
+        <None Remove="Directory.Build.props"/>
         <None Remove="SetPath.cmd"/>
     </ItemGroup>
 
@@ -115,6 +115,36 @@
             <HintPath>$(MelonAssemblies)\UnityEngine.UIModule.dll</HintPath>
         </Reference>
     </ItemGroup>
+
+    <!--#if (MuseDashMirror) -->
+    <ItemGroup>
+        <PackageReference Include="MuseDashMirror" Version="3.0.2"/>
+    </ItemGroup>
+    <!--#endif -->
+    
+    <!--#if (ILRepack) -->
+    <ItemGroup>
+        <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.26"/>
+    </ItemGroup>
+
+    <Target Name="ILRepacker" AfterTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
+        <PropertyGroup>
+            <WorkingDirectory>$(OutputPath)</WorkingDirectory>
+        </PropertyGroup>
+        <ItemGroup>
+            <InputAssemblies Include="$(OutputPath)\$(AssemblyName).dll"/>
+            <IlRepackLibs Include="$(OutputPath)"/>
+            <IlRepackLibs Include="$(MelonNET6)"/>
+        </ItemGroup>
+        <ILRepack
+                Internalize="true"
+                LibraryPath="@(IlRepackLibs)"
+                OutputFile="$(OutputPath)\$(AssemblyName).dll"
+                InputAssemblies="@(InputAssemblies)"
+                TargetKind="Dll"
+                Parallel="true"/>
+    </Target>
+    <!--#endif -->
 
     <Target Name="CopyToModsFolder" AfterTargets="Build">
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="$(GameFolder)\Mods"/>

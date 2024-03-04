@@ -30,7 +30,6 @@ internal static class SettingManager
         File.WriteAllText(ConfigPath, TomletMain.TomlStringFrom(Setting));
     }
 #endif
-
 #if MelonSetting
     private static MelonPreferences_Entry<bool> _exampleBool;
     private static MelonPreferences_Entry<int> _exampleInt;
