@@ -116,11 +116,12 @@
         </Reference>
     </ItemGroup>
 
-    <!--#if (UseMuseDashMirror || UseILRepack || UseUniTask) -->
+    <!--#if (UseMuseDashMirror || UseILRepack || UseUniTask || UseZString) -->
     <ItemGroup>
         <PackageReference Condition="'$(UseMuseDashMirror)' == 'true'" Include="MuseDashMirror" Version="3.0.2"/>
         <PackageReference Condition="'$(UseILRepack)' == 'true'" Include="ILRepack.Lib.MSBuild.Task" Version="2.0.26"/>
         <PackageReference Condition="'$(UseUniTask)' == 'true'" Include="UniTask" Version="2.5.3"/>
+        <PackageReference Condition="'$(UseZString)' == 'true'" Include="ZString" Version="2.5.1"/>
     </ItemGroup>
     <!--#endif -->
 

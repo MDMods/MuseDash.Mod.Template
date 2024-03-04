@@ -75,6 +75,10 @@
         {
           "choice": "UniTask",
           "description": "Use UniTask for async operations"
+        },
+        {
+          "choice": "ZString",
+          "description": "Use ZString for string operations"
         }
       ],
       "defaultValue": "MuseDashMirror"
@@ -90,6 +94,10 @@
     "UseUniTask": {
       "type": "computed",
       "value": "(UsefulLibs == UniTask)"
+    },
+    "UseZString": {
+      "type": "computed",
+      "value": "(UsefulLibs == ZString)"
     }
   },
   "sources": [
