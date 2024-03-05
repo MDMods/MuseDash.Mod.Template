@@ -19,13 +19,11 @@
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <NoDefaultExcludes>true</NoDefaultExcludes>
         <LangVersion>latest</LangVersion>
-        <PackageIcon>icon.png</PackageIcon>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RootNamespace>templatepack</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="icon.png" Pack="true" PackagePath="\"/>
         <None Include="README.md" Pack="true" PackagePath="\"/>
         <Content Include="MuseDashModTemplate\**\*" Exclude="MuseDashModTemplate\**\bin\**;MuseDashModTemplate\**\obj\**;MuseDashModTemplate\**\.idea\**"/>
         <Compile Remove="**\*"/>

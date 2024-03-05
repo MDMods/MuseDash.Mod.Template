@@ -11,7 +11,6 @@
 
     <ItemGroup>
         <None Remove="Directory.Build.props"/>
-        <None Remove="SetPath.cmd"/>
     </ItemGroup>
 
     <ItemGroup>
