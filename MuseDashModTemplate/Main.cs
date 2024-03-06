@@ -9,8 +9,8 @@ internal class Main : MelonMod
         SettingManager.Register();
 #endif
 #if TomletSetting
-        LoggerInstance.Msg($"{Name} is loaded!");
         SettingManager.Load();
+        LoggerInstance.Msg($"{Name} is loaded!");
 #endif
     }
 
