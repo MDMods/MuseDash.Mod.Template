@@ -32,7 +32,7 @@
       "choices": [
         {
           "choice": "MelonLoader",
-          "description": "Use MelonPrefernces for setting"
+          "description": "Use MelonPreferences for setting"
         },
         {
           "choice": "Tomlet",
