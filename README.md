@@ -25,10 +25,12 @@ This will install the template on your computer.
 ## Usage
 
 * If you are using Visual Studio, you should be able to find the template in `Create a new project -> MuseDash Mod`
+
   Then you can create a new project with the following options:
   ![VS](Intros/VS.png)
 
 * If you are using Rider, you should be able to find the template in `New Solution -> Custom Templates -> MuseDash Mod`
+
   Then you can create a new project with the following advanced settings:
   ![Rider](Intros/Rider.png)
 
