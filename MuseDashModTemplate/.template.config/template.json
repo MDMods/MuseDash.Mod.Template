@@ -139,7 +139,7 @@
           ]
         },
         {
-          "condition": "(!ILRepack)",
+          "condition": "(!UseILRepack)",
           "exclude": [
             "ILRepack.targets"
           ]
