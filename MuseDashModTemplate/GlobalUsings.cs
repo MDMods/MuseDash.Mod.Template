@@ -1,5 +1,6 @@
 global using HarmonyLib;
 global using MelonLoader;
+global using MelonLoader.Utils;
 #if UseMuseDashMirror
 global using MuseDashMirror.Attributes;
 global using MuseDashMirror.Attributes.EventAttributes.PatchEvents;

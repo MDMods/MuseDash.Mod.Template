@@ -6,8 +6,8 @@ namespace MuseDashModTemplate;
 
 internal static class SettingManager
 {
+    private static readonly string ConfigPath = Path.Combine(MelonEnvironment.UserDataDirectory, $"{Name}.cfg");
 #if TomletSetting
-    private static readonly string ConfigPath = Path.Combine("UserData", $"{Name}.cfg");
     internal static Data Setting { get; set; } = new();
 
     internal static void Load()
@@ -28,7 +28,6 @@ internal static class SettingManager
     }
 #endif
 #if MelonSetting
-    private static readonly string ConfigPath = Path.Combine("UserData", $"{Name}.cfg");
     private static MelonPreferences_Entry<bool> _exampleBool;
     private static MelonPreferences_Entry<int> _exampleInt;
     private static MelonPreferences_Entry<string> _exampleString;
