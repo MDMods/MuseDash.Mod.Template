@@ -54,3 +54,28 @@ Run the following command
 ```shell
 dotnet new update
 ```
+
+## Build From Source
+
+* Clone the repository to your computer
+* Open command prompt or powershell in that folder, run
+
+```shell
+dotnet build
+````
+
+* Or you can use your IDE to open the `MuseDash.Mod.Template.sln` solution file and build the solution
+
+> [!NOTE]
+> If you saw errors during the build about `Error CS1031`, it's normal, and you can ignore it. The nuget package file should still be generated.
+
+* Then you can find the nuget package in `bin/MuseDash.Mod.Template.{version}.nupkg`
+* Open command prompt or powershell in `bin` folder, run
+
+```shell
+dotnet new install MuseDash.Mod.Template.{version}.nupkg
+```
+
+> [!IMPORTANT]
+> If you have installed the template before, you should uninstall it first by running `dotnet new uninstall MuseDash.Mod.Template` before installing the built
+> version.
