@@ -6,7 +6,7 @@ global using MuseDashMirror.Attributes;
 global using MuseDashMirror.Attributes.EventAttributes.PatchEvents;
 global using MuseDashMirror.Attributes.EventAttributes.SceneEvents;
 global using MuseDashMirror.EventArguments;
-global using MuseDashMirror.Extensions;
+global using MuseDashMirror.Extensions.UnityExtensions;
 #endif
 #if UseUniTask
 global using Cysharp.Threading.Tasks;
