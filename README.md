@@ -14,7 +14,15 @@
 
 * Download [SetPath.cmd](SetPath.cmd) from this repository and run it as administrator, follow the instructions to set Muse Dash path into your
   computer's environment variable.
-* Open command prompt or powershell, run
+* Open command prompt or powershell
+
+* If you are using .Net SDK 6, run
+
+```shell
+dotnet new --install MuseDash.Mod.Template
+````
+
+* If you are using of .Net SDK 7 or 8, run
 
 ```shell
 dotnet new install MuseDash.Mod.Template
